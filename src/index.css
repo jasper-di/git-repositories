@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+.header {
+    background-color: #b4b3b4;
+    padding: 25px;
+}
+.username-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.form-control {
+width: 250px;
+    height: 40px;
+}
+.readme pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #ccc;
+    border-radius: 6px;
+}
+.readme h2 {
+    color: indianred;
+}
