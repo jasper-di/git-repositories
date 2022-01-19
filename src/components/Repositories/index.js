@@ -12,7 +12,7 @@ const Repositories = () => {
     const [notFound, setNotFound] = useState(false)
 
     useEffect(() => {
-        const FetchData = async () => {
+        (async () => {
             try {
                 const {data} = await axios(`https://api.github.com/users/${username}/repos`,) //делает запрос на полученрие списка по адресу username
                 setProject(data)  //кладет в state
@@ -21,8 +21,7 @@ const Repositories = () => {
             } finally {
                 setIsLoading(false)
             }
-        }
-         FetchData()
+        })()   //функция EF -   (async () => {...})()
     }, [username])
 
     if (isLoading) {
@@ -31,7 +30,6 @@ const Repositories = () => {
     if (notFound) {
         return <NotFound />
     }
-
 
 
     return (
@@ -47,10 +45,10 @@ const Repositories = () => {
                     </thead>
                     {
                         project.map((el, idx) =>
-                            <tbody>
+                            <tbody key={el.id}>
                             <tr>
-                                <th scope="row" key={el.id}>{idx + 1}</th>
-                                <td><Link to={`/${username}${el.name}`} >{el.name}</Link></td>
+                                <th scope="row" >{idx + 1}</th>
+                                <td><Link to={`/${username}/${el.name}`}> {el.name} </Link></td>
                                     <td>{el.created_at.slice(0,10)}</td>
                                     <td><Link to={`/${username}/${el.name}`}>
                                         README.md</Link></td>
@@ -65,3 +63,7 @@ const Repositories = () => {
 };
 
 export default Repositories;
+sudo git add .
+    sudo git commit -m "First commit"
+sudo git push -u origin master
+

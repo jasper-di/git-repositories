@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Route exact path='/'><Home /></Route>
         <Route path='/:username'><Repositories /></Route>
-        <Route path='/:username/:project'><Readme /></Route>
+          <Route path='/:username/:project'><Readme /></Route>
       </Router>
   );
 }
